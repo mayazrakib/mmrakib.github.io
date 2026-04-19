@@ -80,7 +80,7 @@ function Navbar() {
                         Projects
                     </NavLink>*/}
                     <a
-                        href="https://github.com/mmrakib"
+                        href="https://github.com/mayazrakib"
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={handleLinkClick}
