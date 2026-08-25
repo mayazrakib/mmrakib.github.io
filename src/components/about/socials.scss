@@ -47,7 +47,8 @@
 
 @media (max-width: 480px) {
     .socials-list {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: nowrap;
         align-items: center;
     }
 }

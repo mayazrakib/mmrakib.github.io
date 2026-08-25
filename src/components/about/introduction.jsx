@@ -4,8 +4,8 @@ import "./introduction.scss";
 
 function Introduction({ onComplete }) {
     const words = [
-        { text: "Hi,", fontClass: "roboto" },
-        { text: "I'm", fontClass: "roboto" },
+        { text: "Hi,", fontClass: "ioskeley" },
+        { text: "I'm", fontClass: "ioskeley" },
         { text: "Mayaz.", fontClass: "yellowtail" }
     ];
 
