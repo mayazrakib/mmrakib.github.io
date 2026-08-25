@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 
-import DocumentFooter from "../layout/document_footer.jsx";
-
 import "./not_found_page.scss";
 
 function NotFoundPage() {
@@ -37,8 +35,6 @@ function NotFoundPage() {
                     </div>
                 </div>
             </section>
-
-            <DocumentFooter />
         </div>
     );
 }
