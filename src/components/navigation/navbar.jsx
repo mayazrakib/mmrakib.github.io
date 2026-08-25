@@ -1,5 +1,3 @@
-import { NavLink } from "react-router-dom";
-
 import "./navbar.scss";
 
 function Navbar() {
@@ -18,16 +16,10 @@ function Navbar() {
 
             <ul id="navbar-links">
                 <li className="navbar-link">
-                    <NavLink
-                        to="/"
-                        end
-                        className={({ isActive }) =>
-                            isActive ? "active" : "inactive"
-                        }
-                    >
+                    <a href="/" className="active" aria-current="page">
                         <span className="nav-index">[01]</span>
                         <span className="nav-label">Home</span>
-                    </NavLink>
+                    </a>
                 </li>
                 <li className="navbar-link">
                     <a

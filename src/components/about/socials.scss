@@ -62,7 +62,9 @@
         letter-spacing: 0.025em;
         text-decoration: none;
         text-transform: uppercase;
-        transition: background-color 160ms ease, color 160ms ease;
+        transition:
+            background-color 160ms ease,
+            color 160ms ease;
 
         &:hover {
             background: #111111;

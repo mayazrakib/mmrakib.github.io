@@ -16,7 +16,8 @@ $ink-color: #111111;
     font-family: "Ioskeley Mono", monospace;
 }
 
-html, body {
+html,
+body {
     min-height: 100%;
     width: 100%;
     background-color: $canvas-color;
@@ -32,16 +33,7 @@ body {
     color: $ink-color;
 }
 
-button,
-input,
-textarea,
-select {
-    font: inherit;
-}
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible {
+a:focus-visible {
     outline: 2px solid $ink-color;
     outline-offset: 3px;
 }

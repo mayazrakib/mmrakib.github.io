@@ -26,9 +26,9 @@ function About() {
             </dl>
 
             <p className="about-text">
-                I'm a computer scientist from Sydney, Australia. I have a
-                passion for data engineering, quantitative finance, and AI/ML.
-                I also write from time to time.
+                I&apos;m a computer scientist from Sydney, Australia. I have a
+                passion for data engineering, quantitative finance, and AI/ML. I
+                also write from time to time.
             </p>
 
             <Socials />

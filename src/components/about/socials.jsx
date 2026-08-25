@@ -3,7 +3,7 @@ import {
     FaYoutube,
     FaTwitter,
     FaGithub,
-    FaEnvelope
+    FaEnvelope,
 } from "react-icons/fa";
 
 import "./socials.scss";
@@ -14,32 +14,32 @@ function Socials() {
             link: "https://instagram.com/mayazrakib",
             label: "Instagram",
             shortLabel: "IG",
-            Icon: FaInstagram
+            Icon: FaInstagram,
         },
         {
             link: "https://youtube.com/@mayazrakib",
             label: "YouTube",
             shortLabel: "YT",
-            Icon: FaYoutube
+            Icon: FaYoutube,
         },
         {
             link: "https://x.com/mayaz_rakib",
             label: "X / Twitter",
             shortLabel: "X",
-            Icon: FaTwitter
+            Icon: FaTwitter,
         },
         {
             link: "https://github.com/mayazrakib",
             label: "GitHub",
             shortLabel: "GH",
-            Icon: FaGithub
+            Icon: FaGithub,
         },
         {
             link: "mailto:mayaz@rakib.com.au",
             label: "Email",
             shortLabel: "Mail",
-            Icon: FaEnvelope
-        }
+            Icon: FaEnvelope,
+        },
     ];
 
     return (
