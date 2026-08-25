@@ -10,7 +10,6 @@ import { getCurrentRoute, ROUTES } from "./location.js";
 
 function App() {
     const [route, setRoute] = useState(getCurrentRoute);
-    const hasPageChrome = route === ROUTES.HOME;
 
     useEffect(() => {
         const updateRoute = () => {
@@ -34,10 +33,8 @@ function App() {
 
     return (
         <div className="site-canvas">
-            <main
-                className={`technical-sheet${hasPageChrome ? "" : " technical-sheet--unframed"}`}
-            >
-                {hasPageChrome && <Navbar />}
+            <main className="technical-sheet">
+                <Navbar />
                 {page}
             </main>
         </div>

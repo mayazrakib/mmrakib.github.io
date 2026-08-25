@@ -1,10 +1,4 @@
 const homePaths = Object.freeze(["/", "/index.html"]);
-const utilitiesPaths = Object.freeze([
-    "/utilities",
-    "/utilities/",
-    "/utilities/index.html",
-]);
-
 const ROUTES = Object.freeze({
     HOME: "home",
     NOT_FOUND: "not_found",
@@ -20,10 +14,8 @@ function isHomeLocation() {
 
 function isUtilitiesLocation() {
     return (
-        (utilitiesPaths.includes(window.location.pathname) &&
-            window.location.hash === "") ||
-        (homePaths.includes(window.location.pathname) &&
-            window.location.hash === "#/utilities")
+        homePaths.includes(window.location.pathname) &&
+        window.location.hash === "#/utilities"
     );
 }
 

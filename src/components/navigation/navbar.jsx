@@ -1,9 +1,14 @@
 import "./navbar.scss";
 
-import { isHomeLocation, isKnownLocation } from "../../location.js";
+import {
+    isHomeLocation,
+    isKnownLocation,
+    isUtilitiesLocation,
+} from "../../location.js";
 
 function Navbar() {
     const homeIsActive = isHomeLocation();
+    const utilitiesIsActive = isUtilitiesLocation();
 
     return (
         <nav id="navbar" aria-label="Primary navigation">
@@ -32,11 +37,23 @@ function Navbar() {
                     </li>
                     <li className="navbar-link">
                         <a
+                            href="#/utilities"
+                            className={utilitiesIsActive ? "active" : undefined}
+                            aria-current={
+                                utilitiesIsActive ? "page" : undefined
+                            }
+                        >
+                            <span className="nav-index">[02]</span>
+                            <span className="nav-label">Utilities</span>
+                        </a>
+                    </li>
+                    <li className="navbar-link">
+                        <a
                             href="https://github.com/mayazrakib"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <span className="nav-index">[02]</span>
+                            <span className="nav-index">[03]</span>
                             <span className="nav-label">Projects</span>
                         </a>
                     </li>
@@ -46,7 +63,7 @@ function Navbar() {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <span className="nav-index">[03]</span>
+                            <span className="nav-index">[04]</span>
                             <span className="nav-label">Resume</span>
                         </a>
                     </li>

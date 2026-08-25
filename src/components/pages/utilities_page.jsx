@@ -7,6 +7,8 @@ import {
     FaShareAlt,
 } from "react-icons/fa";
 
+import DocumentFooter from "../layout/document_footer.jsx";
+
 import "./utilities_page.scss";
 
 const utilities = Object.freeze([
@@ -86,6 +88,8 @@ function UtilitiesPage() {
                     ))}
                 </ul>
             </section>
+
+            <DocumentFooter />
         </div>
     );
 }
