@@ -1,9 +1,15 @@
 import "./document_footer.scss";
 
-import { isHomeLocation } from "../../location.js";
+import { isHomeLocation, isUtilitiesLocation } from "../../location.js";
 
 function DocumentFooter() {
-    const page = isHomeLocation() ? "PAGE 001 / END" : "PAGE 404 / END";
+    let page = "PAGE 404 / END";
+
+    if (isHomeLocation()) {
+        page = "PAGE 001 / END";
+    } else if (isUtilitiesLocation()) {
+        page = "PAGE 002 / END";
+    }
 
     return (
         <footer className="document-footer">

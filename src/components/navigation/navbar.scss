@@ -31,7 +31,7 @@ $paper-color: #eeece5;
 
     #navbar-links {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         margin-top: 1.75rem;
         list-style: none;
         border: var(--line-width) solid $ink-color;
@@ -100,5 +100,12 @@ $paper-color: #eeece5;
         .navbar-link .nav-index {
             font-size: clamp(0.52rem, 2.3vw, 0.67rem);
         }
+    }
+}
+
+@media (max-width: 420px) {
+    #navbar .navbar-link a {
+        flex-direction: column;
+        gap: 0.15rem;
     }
 }
