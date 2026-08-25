@@ -23,13 +23,13 @@ function Socials() {
             Icon: FaYoutube
         },
         {
-            link: "https://x.com/mayazrakibb",
+            link: "https://x.com/mayaz_rakib",
             label: "X / Twitter",
             shortLabel: "X",
             Icon: FaTwitter
         },
         {
-            link: "https://github.com/mmrakib",
+            link: "https://github.com/mayazrakib",
             label: "GitHub",
             shortLabel: "GH",
             Icon: FaGithub

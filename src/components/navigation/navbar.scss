@@ -1,5 +1,5 @@
 $ink-color: #111111;
-$paper-color: #f3f2ed;
+$paper-color: #eeece5;
 
 #navbar {
     padding: 2rem 2.25rem 0;
@@ -34,7 +34,7 @@ $paper-color: #f3f2ed;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         margin-top: 1.75rem;
         list-style: none;
-        border: 1px solid $ink-color;
+        border: var(--line-width) solid $ink-color;
         opacity: 0;
         transform: translateY(4px);
         animation: documentReveal 260ms ease-out 580ms forwards;
@@ -44,7 +44,7 @@ $paper-color: #f3f2ed;
         min-width: 0;
 
         & + .navbar-link {
-            border-left: 1px solid $ink-color;
+            border-left: var(--line-width) solid $ink-color;
         }
 
         a {

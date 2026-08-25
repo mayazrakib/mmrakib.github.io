@@ -62,7 +62,7 @@
     }
 
     blockquote {
-        border-left: 4px solid #555555;
+        border-left: var(--double-line-width) solid #555555;
         padding-left: 16px;
         color: #cccccc;
         margin-bottom: 15px;

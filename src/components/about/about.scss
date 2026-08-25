@@ -11,7 +11,7 @@
     justify-content: space-between;
     gap: 1rem;
     padding-bottom: 0.55rem;
-    border-bottom: 4px double #111111;
+    border-bottom: var(--double-line-width) double #111111;
     text-transform: uppercase;
 
     h2 {
@@ -28,14 +28,14 @@
 
 .profile-data {
     margin: 0;
-    border-right: 1px solid #111111;
-    border-left: 1px solid #111111;
+    border-right: var(--line-width) solid #111111;
+    border-left: var(--line-width) solid #111111;
 }
 
 .profile-row {
     display: grid;
     grid-template-columns: 11rem minmax(0, 1fr);
-    border-bottom: 1px solid #111111;
+    border-bottom: var(--line-width) solid #111111;
     font-size: clamp(0.78rem, 1.6vw, 0.95rem);
 
     dt,
@@ -44,7 +44,7 @@
     }
 
     dt {
-        border-right: 1px solid #111111;
+        border-right: var(--line-width) solid #111111;
         letter-spacing: 0.045em;
     }
 
@@ -97,7 +97,7 @@
         dt {
             padding-bottom: 0.3rem;
             border-right: 0;
-            border-bottom: 1px dotted #777777;
+            border-bottom: var(--line-width) dotted #777777;
         }
 
         dd {

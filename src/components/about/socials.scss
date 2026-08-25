@@ -11,8 +11,8 @@
     justify-content: space-between;
     gap: 1rem;
     padding: 0.55rem 0;
-    border-top: 1px solid #111111;
-    border-bottom: 4px double #111111;
+    border-top: var(--line-width) solid #111111;
+    border-bottom: var(--double-line-width) double #111111;
     text-transform: uppercase;
 
     h2 {
@@ -33,9 +33,9 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    border-right: 1px solid #111111;
-    border-bottom: 1px solid #111111;
-    border-left: 1px solid #111111;
+    border-right: var(--line-width) solid #111111;
+    border-bottom: var(--line-width) solid #111111;
+    border-left: var(--line-width) solid #111111;
 }
 
 .socials-item {
@@ -46,7 +46,7 @@
     animation-delay: calc(1620ms + (var(--social-index) * 70ms));
 
     & + .socials-item {
-        border-left: 1px solid #111111;
+        border-left: var(--line-width) solid #111111;
     }
 
     a {
@@ -66,7 +66,7 @@
 
         &:hover {
             background: #111111;
-            color: #f3f2ed;
+            color: #eeece5;
         }
 
         svg {
