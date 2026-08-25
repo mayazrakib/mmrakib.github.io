@@ -1,0 +1,49 @@
+.document-body {
+    padding: 0 2.25rem 2.25rem;
+}
+
+.document-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid #111111;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(4px);
+    animation: documentReveal 260ms ease-out 2.18s forwards;
+}
+
+@media (max-width: 768px) {
+    .document-body {
+        padding: 0 0.9rem 1.1rem;
+    }
+
+    .document-footer {
+        margin-top: 1.25rem;
+        font-size: clamp(0.56rem, 2.6vw, 0.68rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .masthead-meta,
+    #navbar-links,
+    .introduction-panel,
+    .word,
+    .profile-section,
+    .contact-section,
+    .socials-item,
+    .document-footer {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+
+    #navbar a,
+    .socials-item a {
+        transition: none;
+    }
+}

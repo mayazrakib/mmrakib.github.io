@@ -1,33 +1,107 @@
-.about-container {
-    margin: 2rem auto;
-    max-width: 60ch;
-    padding: 1rem;
-    text-align: center;
-}
-
-.about-text {
-    color: #e0e0e0;
-    font-family: "Ioskeley Mono", monospace;
-    font-size: 1rem;
-    line-height: 1.6;
+.profile-section {
+    color: #111111;
     opacity: 0;
-    transition: opacity 1s ease;
-    margin-bottom: 1rem;
+    transform: translateY(4px);
+    animation: documentReveal 260ms ease-out 1100ms forwards;
 }
 
-.about-text.show {
-    opacity: 1;
-}
+.section-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 4px double #111111;
+    text-transform: uppercase;
 
-@media (max-width: 768px) {
-    .about-text {
-        font-size: 1.3rem;
-        line-height: 1.6;
+    h2 {
+        font-size: 1.05rem;
+        font-weight: 400;
+        letter-spacing: 0.045em;
+    }
+
+    span {
+        font-size: 0.68rem;
+        letter-spacing: 0.04em;
     }
 }
 
-@media (max-width: 480px) {
+.profile-data {
+    margin: 0;
+    border-right: 1px solid #111111;
+    border-left: 1px solid #111111;
+}
+
+.profile-row {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 1fr);
+    border-bottom: 1px solid #111111;
+    font-size: clamp(0.78rem, 1.6vw, 0.95rem);
+
+    dt,
+    dd {
+        padding: 0.7rem 0.8rem;
+    }
+
+    dt {
+        border-right: 1px solid #111111;
+        letter-spacing: 0.045em;
+    }
+
+    dd {
+        margin: 0;
+        overflow-wrap: anywhere;
+    }
+}
+
+.about-text {
+    margin: 0;
+    padding: 1.15rem 0 1.4rem;
+    color: #111111;
+    font-size: clamp(0.84rem, 1.6vw, 0.98rem);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .section-heading {
+        h2 {
+            font-size: 0.88rem;
+        }
+
+        span {
+            font-size: 0.58rem;
+        }
+    }
+
+    .profile-row {
+        grid-template-columns: 7rem minmax(0, 1fr);
+        font-size: clamp(0.66rem, 3vw, 0.82rem);
+
+        dt,
+        dd {
+            padding: 0.6rem 0.55rem;
+        }
+    }
+
     .about-text {
-        font-size: 1rem;
+        padding: 0.9rem 0 1.1rem;
+        font-size: clamp(0.72rem, 3.4vw, 0.88rem);
+        line-height: 1.55;
+    }
+}
+
+@media (max-width: 420px) {
+    .profile-row {
+        grid-template-columns: 1fr;
+
+        dt {
+            padding-bottom: 0.3rem;
+            border-right: 0;
+            border-bottom: 1px dotted #777777;
+        }
+
+        dd {
+            padding-top: 0.45rem;
+        }
     }
 }

@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import {
     FaInstagram,
     FaYoutube,
@@ -13,64 +12,68 @@ function Socials() {
     const icons = [
         {
             link: "https://instagram.com/mayazrakib",
+            label: "Instagram",
+            shortLabel: "IG",
             Icon: FaInstagram
         },
         {
             link: "https://youtube.com/@mayazrakib",
+            label: "YouTube",
+            shortLabel: "YT",
             Icon: FaYoutube
         },
         {
             link: "https://x.com/mayazrakibb",
+            label: "X / Twitter",
+            shortLabel: "X",
             Icon: FaTwitter
         },
         {
             link: "https://github.com/mmrakib",
+            label: "GitHub",
+            shortLabel: "GH",
             Icon: FaGithub
         },
         {
             link: "mailto:mayaz@rakib.com.au",
+            label: "Email",
+            shortLabel: "Mail",
             Icon: FaEnvelope
         }
     ];
 
-    const [visibleIndex, setVisibleIndex] = useState(-1);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setVisibleIndex((prev) => {
-                if (prev < icons.length - 1) {
-                    return prev + 1;
-                } else {
-                    clearInterval(interval);
-                    return prev;
-                }
-            });
-        }, 100);
-
-        return () => clearInterval(interval);
-    }, [icons.length]);
-
     return (
-        <div className="socials-container">
+        <section className="contact-section" aria-labelledby="contact-heading">
+            <header className="contact-heading">
+                <h2 id="contact-heading">CONTACT</h2>
+                <span>CHANNELS / 05</span>
+            </header>
+
             <ul className="socials-list">
                 {icons.map((item, index) => (
                     <li
-                        key={index}
-                        className={`socials-item ${
-                            index <= visibleIndex ? "show" : ""
-                        }`}
+                        key={item.label}
+                        className="socials-item"
+                        style={{ "--social-index": index }}
                     >
                         <a
                             href={item.link}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={item.label}
                         >
-                            <item.Icon />
+                            <item.Icon aria-hidden="true" />
+                            <span className="social-label social-label-long">
+                                {item.label}
+                            </span>
+                            <span className="social-label social-label-short">
+                                {item.shortLabel}
+                            </span>
                         </a>
                     </li>
                 ))}
             </ul>
-        </div>
+        </section>
     );
 }
 

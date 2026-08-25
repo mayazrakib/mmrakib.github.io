@@ -1,6 +1,8 @@
 @use "fonts";
 
-$bg-color: #333333;
+$canvas-color: #2b2b2b;
+$paper-color: #f3f2ed;
+$ink-color: #111111;
 
 * {
     margin: 0;
@@ -10,13 +12,86 @@ $bg-color: #333333;
 }
 
 html, body {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
-    background-color: $bg-color;
+    background-color: $canvas-color;
 }
 
 #root {
-    height: 100%;
+    min-height: 100vh;
     width: 100%;
-    background-color: $bg-color;
+    background-color: $canvas-color;
+}
+
+body {
+    color: $ink-color;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid $ink-color;
+    outline-offset: 3px;
+}
+
+.site-canvas {
+    min-height: 100vh;
+    padding: 1.5rem;
+}
+
+.technical-sheet {
+    width: min(70rem, 100%);
+    min-height: calc(100vh - 3rem);
+    min-height: calc(100svh - 3rem);
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid $ink-color;
+    background: $paper-color;
+    color: $ink-color;
+    opacity: 0;
+    transform: translateY(4px);
+    animation: documentReveal 300ms ease-out forwards;
+}
+
+::selection {
+    background: $ink-color;
+    color: $paper-color;
+}
+
+@keyframes documentReveal {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .site-canvas {
+        padding: 0.5rem;
+    }
+
+    .technical-sheet {
+        min-height: calc(100vh - 1rem);
+        min-height: calc(100svh - 1rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .technical-sheet {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
 }

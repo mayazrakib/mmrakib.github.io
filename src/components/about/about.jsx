@@ -1,40 +1,38 @@
-import React, { useState, useEffect } from "react";
-
 import Socials from "./socials.jsx";
 
 import "./about.scss";
 
 function About() {
-    const [visible, setVisible] = useState(false);
-    const [showSocials, setShowSocials] = useState(false);
-
-    useEffect(() => {
-        const timerParagraph = setTimeout(() => {
-            setVisible(true);
-        }, 50);
-
-        return () => clearTimeout(timerParagraph);
-    }, []);
-
-    useEffect(() => {
-        if (visible) {
-            const timerSocials = setTimeout(() => {
-                setShowSocials(true);
-            }, 1000);
-            return () => clearTimeout(timerSocials);
-        }
-    }, [visible]);
-
     return (
-        <div className="about-container">
-            <p className={`about-text ${visible ? "show" : ""}`}>
-                I'm a computer scientist from Sydney, Australia.
-                I have a passion for data engineering, quantitative finance, and AI/ML.
+        <section className="profile-section" aria-labelledby="profile-heading">
+            <header className="section-heading">
+                <h2 id="profile-heading">PROFILE</h2>
+                <span>RECORD / ACTIVE</span>
+            </header>
+
+            <dl className="profile-data">
+                <div className="profile-row">
+                    <dt>LOCATION</dt>
+                    <dd>SYDNEY, AUSTRALIA</dd>
+                </div>
+                <div className="profile-row">
+                    <dt>FIELD</dt>
+                    <dd>COMPUTER SCIENCE</dd>
+                </div>
+                <div className="profile-row">
+                    <dt>FOCUS</dt>
+                    <dd>DATA ENGINEERING / QUANTITATIVE FINANCE / AI/ML</dd>
+                </div>
+            </dl>
+
+            <p className="about-text">
+                I'm a computer scientist from Sydney, Australia. I have a
+                passion for data engineering, quantitative finance, and AI/ML.
                 I also write from time to time.
             </p>
 
-            {showSocials && <Socials />}
-        </div>
+            <Socials />
+        </section>
     );
 }
 

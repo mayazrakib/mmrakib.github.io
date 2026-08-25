@@ -1,51 +1,33 @@
-import React, { useState, useEffect } from "react";
-
 import "./introduction.scss";
 
-function Introduction({ onComplete }) {
-    const words = [
-        { text: "Hi,", fontClass: "ioskeley" },
-        { text: "I'm", fontClass: "ioskeley" },
-        { text: "Mayaz.", fontClass: "yellowtail" }
-    ];
-
-    const [visibleIndex, setVisibleIndex] = useState(-1);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setVisibleIndex((prev) => {
-                if (prev < words.length - 1) {
-                    return prev + 1;
-                } else {
-                    clearInterval(interval);
-
-                    setTimeout(() => {
-                        onComplete?.(); 
-                    }, 100);
-
-                    return prev;
-                }
-            });
-        }, 500);
-
-        return () => clearInterval(interval);
-    }, [words.length, onComplete]);
+function Introduction() {
+    const words = ["Mayaz", "Rakib"];
 
     return (
-        <div className="outer-center-container">
-            <div className="text-container">
-                {words.map((word, index) => (
-                    <span
-                        key={index}
-                        className={`word ${word.fontClass} ${
-                            index <= visibleIndex ? "show" : ""
-                        }`}
-                    >
-                        {word.text}
-                    </span>
-                ))}
-            </div>
-        </div>
+        <section className="introduction-panel" aria-labelledby="intro-heading">
+            <p className="introduction-code">PERSONAL PROFILE / SYSTEM 01</p>
+            <h1
+                id="intro-heading"
+                className="text-container"
+                aria-label="Mayaz Rakib"
+            >
+                <span className="impact-layer impact-first" aria-hidden="true">
+                    {words.map((word) => (
+                        <span key={word} className="impact-word">
+                            {word}
+                        </span>
+                    ))}
+                </span>
+                <span className="impact-layer impact-final" aria-hidden="true">
+                    {words.map((word) => (
+                        <span key={word} className="impact-word">
+                            {word}
+                        </span>
+                    ))}
+                </span>
+                <span className="print-head" aria-hidden="true" />
+            </h1>
+        </section>
     );
 }
 

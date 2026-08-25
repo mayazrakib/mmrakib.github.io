@@ -1,20 +1,19 @@
-import React, { useState } from "react";
-
 import Introduction from "../about/introduction.jsx";
 import About from "../about/about.jsx";
 
+import "./homepage.scss";
+
 function HomePage() {
-    const [showAbout, setShowAbout] = useState(false);
-
-    const handleIntroductionComplete = () => {
-        setShowAbout(true);
-    };
-
     return (
-        <>
-            <Introduction onComplete={handleIntroductionComplete} />
-            {showAbout && <About />}
-        </>
+        <div className="document-body">
+            <Introduction />
+            <About />
+
+            <footer className="document-footer">
+                <span>MAYAZ RAKIB</span>
+                <span>PAGE 001 / END</span>
+            </footer>
+        </div>
     );
 }
 

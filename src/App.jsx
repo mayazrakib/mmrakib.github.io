@@ -9,10 +9,14 @@ import HomePage from "./components/pages/homepage.jsx";
 function App() {
     return (
         <Router>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-            </Routes>
+            <div className="site-canvas">
+                <main className="technical-sheet">
+                    <Navbar />
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                    </Routes>
+                </main>
+            </div>
         </Router>
     );
 }

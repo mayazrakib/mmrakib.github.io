@@ -1,55 +1,22 @@
-import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
+
 import "./navbar.scss";
 
 function Navbar() {
-    const [opened, setOpened] = useState(false);
-    const [animating, setAnimating] = useState(false);
-    const [loaded, setLoaded] = useState(false);
-
-    useEffect(() => {
-        setLoaded(true);
-    }, []);
-
-    const toggleMenu = () => {
-        if (opened) {
-            setAnimating(true);
-            setTimeout(() => {
-                setOpened(false);
-                setAnimating(false);
-            }, 400);
-        } else {
-            setOpened(true);
-        }
-    };
-
-    const handleLinkClick = () => {
-        if (opened) {
-            setOpened(false);
-        }
-    };
-
     return (
-        <nav id="navbar" className={loaded ? "fade-in" : ""}>
-            <div className="navbar-header">
-                <button
-                    className={`navbar-burger ${opened ? "open" : ""}`}
-                    onClick={toggleMenu}
-                    aria-label="Toggle navigation"
-                >
-                    {opened ? (
-                        <FaTimes className="burger-icon" />
-                    ) : (
-                        <FaBars className="burger-icon" />
-                    )}
-                </button>
+        <nav id="navbar" aria-label="Primary navigation">
+            <div className="masthead-meta">
+                <div className="masthead-identity">
+                    <span>MAYAZ RAKIB</span>
+                    <span>COMPUTER SCIENTIST</span>
+                </div>
+                <div className="masthead-reference">
+                    <span>PROFILE / 01</span>
+                    <span>SYDNEY, AU</span>
+                </div>
             </div>
 
-            <ul
-                id="navbar-links"
-                className={`${opened ? "open" : animating ? "closing" : ""}`}
-            >
+            <ul id="navbar-links">
                 <li className="navbar-link">
                     <NavLink
                         to="/"
@@ -57,40 +24,29 @@ function Navbar() {
                         className={({ isActive }) =>
                             isActive ? "active" : "inactive"
                         }
-                        onClick={handleLinkClick}
                     >
-                        Home
+                        <span className="nav-index">[01]</span>
+                        <span className="nav-label">Home</span>
                     </NavLink>
                 </li>
-                {/*
                 <li className="navbar-link">
-                    <NavLink
-                        to="/writing"
-                        className={({ isActive }) =>
-                            isActive ? "active" : "inactive"
-                        }
-                        onClick={handleLinkClick}
-                    >
-                        Writing
-                    </NavLink>
-                </li>
-                */}
-                <li className="navbar-link">
-                    {/*<NavLink to="/projects" className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={handleLinkClick}>
-                        Projects
-                    </NavLink>*/}
                     <a
                         href="https://github.com/mayazrakib"
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={handleLinkClick}
                     >
-                        Projects
+                        <span className="nav-index">[02]</span>
+                        <span className="nav-label">Projects</span>
                     </a>
                 </li>
                 <li className="navbar-link">
-                    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>
-                        Resume
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className="nav-index">[03]</span>
+                        <span className="nav-label">Resume</span>
                     </a>
                 </li>
             </ul>
